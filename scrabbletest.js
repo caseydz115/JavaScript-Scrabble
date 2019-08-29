@@ -21,24 +21,29 @@ function test(message, assertion) {
 }
 
 test("whitespace scores 0", function() {
-  return scrabble('\t') === 0;
+  var whitespaceScore = Object.create(Scrabble);
+  return whitespaceScore.calculateScore('\t') === 0;
 });
 
 test("very short word", function() {
-  return scrabble('a') === 1;
+  var shortWord = Object.create(Scrabble);
+  return shortWord.calculateScore('a') === 1;
 });
 
 // _.first
 test("simple word", function() {
-  return scrabble('street') === 6;
+  var simpleWord = Object.create(Scrabble);
+  return simpleWord.calculateScore('street') === 6;
 });
 
 
 test("complicated word", function() {
-  return scrabble('quirky') === 22;
+  var complicatedWord = Object.create(Scrabble);
+  return complicatedWord.calculateScore('quirky') === 22;
   });
 
 
 test("case insensitive", function() {
-  return scrabble('OXYPHENBUTAZONE') === 41;
+  var caseInsensitive = Object.create(Scrabble);
+  return caseInsensitive.calculateScore('OXYPHENBUTAZONE') === 41;
 });
