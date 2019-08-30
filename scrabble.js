@@ -8,8 +8,8 @@ var scores = {
   qz: 10
 }
 
-var Scrabble = {
-  calculateScore: function(word) {
+function Scrabble(word) {
+    this.calculateScore = function() {
     var result = 0;
     var lowerCase = word.toLowerCase();
     for (var i = 0; i < word.length; i++) {
